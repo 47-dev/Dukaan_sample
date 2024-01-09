@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { FiClipboard, FiChevronDown } from 'react-icons/fi';
-import { MdOutlineStorage } from "react-icons/md";
+import { CiDiscount1 } from "react-icons/ci";
 import { GoHome } from "react-icons/go";
 import { BiNotepad } from "react-icons/bi";
 import { MdPayments } from "react-icons/md";
@@ -12,11 +12,15 @@ import { HiSpeakerphone } from "react-icons/hi";
 import { CiSearch } from "react-icons/ci";
 import { LuArrowDownUp } from "react-icons/lu";
 import { FiArrowDown } from "react-icons/fi";
-import { FaLocationArrow } from "react-icons/fa"; // Import all icons for brevity
+import { FaLocationArrow } from "react-icons/fa"; 
+import { SiGoogleanalytics } from "react-icons/si";
+import { IoMdContacts } from "react-icons/io";
+import { IoIosColorPalette } from "react-icons/io";
+import { IoFlashOutline } from "react-icons/io5";// Import all icons for brevity
 
 const SidebarSection = ({ title, links }) => {
   return (
-    <div className="bg-[#1E2640] p-4 h-[5000px] mt-[-122px]">
+    <div className="bg-[#1E2640] p-4 h-[5000px] mt-[-122px] flex flex-col">
       {/* Logo and Visit Store */}
       <div className="ml flex items-center">
         <div alt="Logo" className="border w-8 bg-[white] h-8 mr-1"></div>
@@ -53,18 +57,19 @@ const Dashboard = () => {
   const sections = [
     {
       links: [
-        { path: '/Analytics', label: 'Home', icon: <GoHome /> },
-        { path: '/Definition', label: 'Orders', icon: <BiNotepad /> },
-        { path: '/Analyticssetting', label: 'Products', icon: <AiTwotoneAppstore /> },
-        { path: '/Diagonistics', label: 'Delivery', icon: <CiDeliveryTruck className="text-xl" /> },
-        { path: '/Interface', label: 'Marketing', icon: <HiSpeakerphone /> },
-        { path: '/Storage', label: 'Analytics', icon: <MdOutlineStorage /> },
-        { path: '/Notification', label: 'Payments', icon: <MdPayments /> },
-        { path: '/Notification', label: 'Tools', icon: <FaLocationArrow /> },
-        { path: '/Notification', label: 'Discounts', icon: <FiClipboard /> },
-        { path: '/Notification', label: 'Audience', icon: <FiClipboard /> },
-        { path: '/Notification', label: 'Appereance', icon: <FiClipboard /> },
-        { path: '/Notification', label: 'Plugins', icon: <FiClipboard /> },
+        { path: '/', label: 'Home', icon: <GoHome /> },
+        { path: '/', label: 'Orders', icon: <BiNotepad /> },
+        { path: '/', label: 'Products', icon: <AiTwotoneAppstore /> },
+        { path: '/', label: 'Delivery', icon: <CiDeliveryTruck className="text-xl" /> },
+        { path: '/', label: 'Marketing', icon: <HiSpeakerphone /> },
+        { path: '/', label: 'Analytics', icon: <SiGoogleanalytics /> },
+        { path: '/', label: 'Payments', icon: <MdPayments /> },
+        { path: '/', label: 'Tools', icon: <FaLocationArrow /> },
+        { path: '/', label: 'Discounts', icon: <CiDiscount1 
+        className='text-xl'/> },
+        { path: '/', label: 'Audience', icon: <IoMdContacts /> },
+        { path: '/', label: 'Appereance', icon: <IoIosColorPalette /> },
+        { path: '/', label: 'Plugins', icon: <IoFlashOutline /> },
       ],
     },
   ];
@@ -86,12 +91,12 @@ const Dashboard = () => {
           <SidebarSection key={section.title} title={section.title} links={section.links} />
         ))}
       </div>
-      <div className="ml-6 w-full mr-12 h-full bg-[#FAFAFA] rounded-md">
+      <div className=" mr-[1600px] h-full bg-[#FAFAFA] rounded-md">
       <div className='ml-6 w-full mr-12 h-full bg-[#FAFAFA] rounded-md'>
         <div className='overview-section'>
         <div className='flex justify-between'>
         <div className='text-xl font-medium ml-3'>Overview</div>
-        <div className='flex '>
+        <div className='flex mr-8'>
         <div className='bg-[#FFFFFF]'>Last Month</div>
         <FiChevronDown className=" text-[black] text-2xl font-medium mr-4" />
         </div>
@@ -114,7 +119,7 @@ const Dashboard = () => {
           <input type="text" placeholder="Search by order ID..." className='mr-6 bg-[#F2F2F2]'/>
         </div>
         <div className='flex justify-between mr-6'>
-          <div className='flex mr-3  border w-[60px] rounded-md space-y-0 '>
+          <div className='flex mr-3  border w-[60px] rounded-md mr-8'>
             <div className='mr-2'>Sort</div>
             <div className=''>
             <LuArrowDownUp />
